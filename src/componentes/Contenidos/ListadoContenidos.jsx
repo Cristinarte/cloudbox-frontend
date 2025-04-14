@@ -4,7 +4,7 @@ import { Compartir } from '../Generales/Compartir';
 import axios from "axios";
 import { FaEdit, FaTrash, FaShareAlt } from 'react-icons/fa';
 import { ModalConfirmacion } from '../Generales/ModalConfirmacion';  // Importa el modal
-import "./ListadoContenidos.scss";
+import "./listadoContenidos.scss";
 
 export const ListadoContenidos = ({ coleccionId, contenidos, terminoBusqueda }) => {
   const [contenidosLocal, setContenidosLocal] = useState(contenidos);

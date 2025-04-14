@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './inicio.scss'; // Puedes reutilizar los estilos del login si quieres
+import './Inicio.scss'; // Puedes reutilizar los estilos del login si quieres
 import { useNavigate, useLocation } from 'react-router-dom';
 
 export const RestablecerContrasenia = () => {
