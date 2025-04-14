@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Sidebar } from '../Sidebar/Sidebar';
 import { Panel } from '../Panel/Panel';
-import "./dashboard.scss";
+import "./Dashboard.scss";
 
 export const Dashboard = ({ alias }) => {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
