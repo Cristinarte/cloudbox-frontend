@@ -1,5 +1,5 @@
 import React from "react";
-import "./panel.scss";
+import "./Panel.scss";
 import compartir from '../../assets/images/iconoCompartir.png';
 
 export const Panel = ({ usuario, toggleSidebar }) => {

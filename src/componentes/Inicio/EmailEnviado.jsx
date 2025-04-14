@@ -1,5 +1,5 @@
 import React from 'react';
-import './inicio.scss'; // Puedes usar los mismos estilos
+import './Inicio.scss'; // Puedes usar los mismos estilos
 
 
 

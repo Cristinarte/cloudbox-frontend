@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './registro.scss';
+import './Registro.scss';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import FlechaBoton from '../Generales/FlechaBoton';

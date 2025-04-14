@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { ListadoColecciones } from './ListadoColecciones';
 import { BusquedaFiltro } from '../BusquedaFiltro/BusquedaFiltro';
 import { InsertarColeccion } from './InsertarColeccion';
-import './colecciones.scss';
+import './Colecciones.scss';
 import { ModalConfirmacion } from '../Generales/ModalConfirmacion';
 
 export const Colecciones = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import "./sidebar.scss";
+import "./Sidebar.scss";
 import { Link } from "react-router-dom";
 
 export const Sidebar = ({ isExpanded, toggleSidebar }) => {

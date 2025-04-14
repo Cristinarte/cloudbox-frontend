@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaEdit, FaTrash, FaShareAlt } from 'react-icons/fa';
-import './listadoColecciones.scss';
+import './ListadoColecciones.scss';
 import defaultImage from '../../assets/images/defaultImg.png';
 import { Compartir } from '../Generales/Compartir';
 
