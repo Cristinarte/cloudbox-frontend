@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Nav } from './componentes/nav/nav';
+import { Nav } from './componentes/nav/Nav';
 import { HeroSection } from './componentes/HeroSection/HeroSection';
 import { Content } from './componentes/Contenido/Content';
 import { Footer } from './componentes/Footer/Footer';
