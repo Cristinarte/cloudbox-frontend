@@ -1,0 +1,145 @@
+@import '../../assets/scss/variables-generales.scss';
+
+.hero-container {
+  position: relative;
+  min-height: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: $altura-navbar !important;
+}
+
+.hero-title,
+.hero-subtitle,
+.hero-highlight {
+  margin: 0;
+  font-family: $fuente-titulo;
+  color: $color-texto-principal;
+}
+
+.hero-title {
+  font-size: 60px;
+}
+
+.hero-subtitle {
+  font-size: 80px;
+}
+
+.hero-highlight {
+  font-size: 80px;
+  color: $color-destacar;
+}
+
+// Animaciones de entrada
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-250%) rotate(30deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(30deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(250%) rotate(-30deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(-30deg);
+    opacity: 1;
+  }
+}
+
+.hero-image {
+  position: absolute;
+  width: 146px;
+  height: 218px;
+  background-size: cover;
+  background-position: center;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+// Posición base
+.top-right {
+  top: 150px;
+  right: clamp(20px, 10vw, 320px); // Ajustamos el mínimo a 20px
+  animation-name: slideInFromRight;
+}
+
+.bottom-left {
+  bottom: 150px;
+  left: clamp(20px, 10vw, 320px); // Ajustamos el mínimo a 20px
+  animation-name: slideInFromLeft;
+}
+
+// Media query para 883px y menos
+@media (max-width: 883px) {
+  .top-right {
+    right: 40px; // Fijamos exactamente 20px
+  }
+
+  .bottom-left {
+    left: 40px; // Fijamos exactamente 20px
+  }
+}
+
+// Versión responsive para móviles
+@media (max-width: 768px) {
+  .hero-container {
+    min-height: auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 40px;
+  }
+
+  .hero-highlight {
+    font-size: 42px;
+  }
+
+  // Solo para imágenes móviles
+  .hero-image.mobile-stack {
+    position: static !important;
+    width: 90px;
+    height: 130px;
+    animation: none !important;
+    opacity: 1 !important;
+    transform-origin: center;
+  }
+
+  // Imagen superior (debe rotar -30deg en móvil)
+  .top-right.mobile-stack {
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: rotate(-30deg);
+  }
+
+  // Imagen inferior (debe rotar +30deg en móvil)
+  .bottom-left.mobile-stack {
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: rotate(30deg);
+  }
+}
+

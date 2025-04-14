@@ -1,0 +1,112 @@
+@import '../../assets/scss/variables-generales.scss';
+
+.content-container {
+  background-color: $color-texto-principal; // Fondo oscuro
+  color: $body-bg; // Color del texto en base al fondo de la web
+  padding: 80px; // Espacio base
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Centra horizontalmente
+  justify-content: center; // Centra verticalmente todo el contenido
+  width: 100%; // Aseguramos que ocupe el ancho completo
+  box-sizing: border-box; // Incluye el padding en el ancho total
+
+}
+
+.content-text {
+  font-family: $fuente-principal; // Usa 'Inter', definida en variables
+  display: flex; // Convertimos en flex
+  flex-direction: column; // Apilamos los <p> verticalmente
+  align-items: center; // Centra horizontalmente los <p>
+  justify-content: center; // Centra verticalmente los <p>
+  text-align: center;
+}
+
+.content-text p:nth-child(1), // "Gestiona y organiza"
+.content-text p:nth-child(2) { // "tus URLs de forma sencilla"
+  font-size: 40px;
+  font-weight: $fuente-peso-regular;
+  margin: 0; // Evita márgenes inesperados
+}
+
+.content-text p:nth-child(3) { // "Accede a tus contenidos desde un solo lugar"
+  font-size: 18px;
+  font-weight: $fuente-peso-regular;
+  margin: 0; // Evita márgenes inesperados
+}
+
+.content-image {
+  width: 232px; // Tamaño base
+  height: 232px;
+  margin-top: 20px;
+}
+
+// Media query para pantallas de hasta 1024px (tablets y laptops pequeñas)
+@media (max-width: 1024px) {
+  .content-container {
+    padding: 60px;
+
+  }
+
+  .content-text p:nth-child(1),
+  .content-text p:nth-child(2) {
+    font-size: 32px;
+  }
+
+  .content-text p:nth-child(3) {
+    font-size: 16px;
+  }
+
+  .content-image {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+// Media query para pantallas de hasta 768px (tablets y móviles grandes)
+@media (max-width: 768px) {
+  .content-container {
+    padding: 40px;
+    height: 400px;
+
+  }
+
+  .content-text p:nth-child(1),
+  .content-text p:nth-child(2) {
+    font-size: 24px;
+  }
+
+  .content-text p:nth-child(3) {
+    font-size: 16px;
+  }
+
+  .content-image {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+// Media query para pantallas de hasta 480px (móviles pequeños)
+@media (max-width: 480px) {
+  .content-container {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+
+  }
+
+  .content-text p:nth-child(1),
+  .content-text p:nth-child(2) {
+    font-size: 20px;
+  }
+
+  .content-text p:nth-child(3) {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .content-image {
+    width: 100px;
+    height: 100px;
+  }
+}

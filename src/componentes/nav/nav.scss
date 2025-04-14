@@ -1,0 +1,159 @@
+@import '../../assets/scss/variables-generales.scss';
+
+.navbar.bg-body-tertiary {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 0;
+  height: $altura-navbar;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $color-fondo-web !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1100; /* Por encima del Sidebar (1000/1001) */
+}
+
+.bi {
+  margin-left: 0 !important;
+}
+
+.container-fluid.nav {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: $color-boton-principal;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.menu-movil {
+  background-color: $color-texto-principal;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 2000; /* Por encima del Sidebar (1000/1001), debajo del modal (5000) */
+  animation: fadeIn 0.3s ease-in-out;
+
+  .cerrar-menu {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: $color-texto-boton-principal;
+    padding: 8px;
+    margin-right: 10px;
+  }
+
+  .menu-opciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    a,
+    button {
+      font-size: 1.2rem;
+      color: $color-texto-boton-principal;
+      background: none;
+      border: none;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000 !important; /* Forzado para estar por encima de todo */
+}
+
+.modal-contenido {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.modal-botones {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn-cancelar,
+.btn-confirmar {
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-cancelar {
+  background: #ccc;
+}
+
+.btn-confirmar {
+  background: $color-error-default;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reforzar en responsive */
+@media (max-width: 785px) {
+  .navbar.bg-body-tertiary {
+    z-index: 1100; /* Por encima del Sidebar colapsado (1000) */
+  }
+  
+  .menu-movil {
+    z-index: 2000; /* Por encima del Sidebar expandido (1001) */
+  }
+  
+  .modal-overlay {
+    z-index: 5000 !important; /* Por encima de todo */
+  }
+}

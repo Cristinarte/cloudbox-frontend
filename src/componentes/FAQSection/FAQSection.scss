@@ -1,0 +1,126 @@
+@import '../../assets/scss/variables-generales.scss';
+
+
+.container-preguntas{
+
+  .faq-container {
+    padding: 80px;
+    display: flex;
+    gap: 80px;
+    justify-content: center; /* Centra horizontalmente */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    box-sizing: border-box; /* Incluye padding en el ancho */
+    align-items: flex-start; /* Alinea arriba por defecto */
+  }
+  
+  
+  .faq-title {
+    font-size: 2rem; /* 32px en base a 16px */
+    margin-bottom: 0;
+    color: #171719; /* Tu color principal */
+  }
+  
+  .accordion.accordion-flush {
+    width: 50%; /* Ancho base para pantallas grandes */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .accordion-body {
+    text-align: left;
+  }
+  
+  .accordion-button.collapsed  {
+    color: $color-texto-azul !important;
+  }
+  
+  .accordion-item {
+    background-color: transparent !important; /* Sin fondo */
+    box-shadow: none !important; /* Sin sombras */
+    border: none; /* Sin bordes */
+  }
+  
+  .accordion-button {
+    background-color: transparent !important; /* Sin fondo */
+    color: $color-texto-azul; /* Color del texto */
+    border-bottom: none !important;
+  
+    &:focus {
+      color: $color-texto-azul;
+      box-shadow: 0 0 0 3px transparent !important; /* Corrige el box-shadow */
+      outline: none !important;
+    }
+  }
+  
+  .accordion-button::after {
+    filter: brightness(0) saturate(100%) invert(12%) sepia(98%) saturate(3000%) hue-rotate(235deg);
+  }
+  
+  /* Media query para pantallas de hasta 1024px (tablets y laptops pequeñas) */
+  @media (max-width: 1024px) {
+    .faq-container {
+      padding: 60px;
+      gap: 40px; /* Reduce el espacio entre elementos */
+      flex-direction: column; /* Cambia a columna para mejor ajuste */
+      align-items: center; /* Centra los elementos */
+    }
+  
+    .faq-title {
+      font-size: 1.75rem; /* 28px */
+    }
+  
+    .accordion.accordion-flush {
+      width: 70%; /* Aumenta el ancho relativo */
+    }
+  }
+  
+  /* Media query para pantallas de hasta 768px (móviles grandes y tablets) */
+  @media (max-width: 768px) {
+    .faq-container {
+      padding: 40px;
+      gap: 30px;
+    }
+  
+    .faq-title {
+      font-size: 1.5rem; /* 24px */
+    }
+  
+    .accordion.accordion-flush {
+      width: 100%; /* Ocupa todo el ancho disponible */
+    }
+  
+    .accordion-button {
+      font-size: 0.9rem; /* Reduce ligeramente el tamaño del texto del botón */
+    }
+  
+    .accordion-body {
+      font-size: 0.875rem; /* 14px para mejor legibilidad */
+    }
+  }
+  
+  /* Media query para pantallas de hasta 320px (móviles pequeños) */
+  @media (max-width: 320px) {
+    .faq-container {
+      padding: 20px;
+      gap: 20px;
+    }
+  
+    .faq-title {
+      font-size: 1.25rem; /* 20px */
+    }
+  
+    .accordion.accordion-flush {
+      width: 100%; /* Mantiene el ancho completo */
+    }
+  
+    .accordion-button {
+      font-size: 0.8rem; /* 12.8px */
+    }
+  
+    .accordion-body {
+      font-size: 0.75rem; /* 12px */
+    }
+  }
+
+}
+

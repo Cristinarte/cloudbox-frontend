@@ -1,0 +1,172 @@
+@import '../../assets/scss/variables-generales.scss';
+
+.sidebar.d-flex {
+  width: 400px; /* Ancho normal del sidebar */
+  background-color: $color-texto-principal !important;
+  box-sizing: border-box;
+  padding: 40px !important;
+  top: 0;
+  left: 0;
+  position: fixed;
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden !important;
+  transition: width 0.3s ease-in-out; /* Transición para cambiar el ancho del sidebar */
+  z-index: 999;
+  
+  .titulo-panel {
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    width: 100%; /* Aseguramos que ocupe todo el ancho disponible */
+    
+    a {
+      color: white; /* Asegura que el color inicial sea blanco */
+      text-decoration: none; /* Elimina subrayado */
+
+    }
+  
+    /* Agregar hover a toda la zona del h4 */
+    &:hover {
+      
+      a {
+        color: $color-destacar !important; /* Forzar el cambio en el enlace */
+      }
+    }
+  }
+
+  .nav-item {
+    margin-top: 10px;
+  }
+
+  .sidebar-header {
+    margin-bottom: 20px;
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+  }
+
+  .sidebar-header a {
+    cursor: pointer; /* Esto cambia el cursor a una mano sobre el enlace */
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    color: white; /* Asegúrate de que el color inicial sea blanco, si es necesario */
+  
+    .menu-sidebar {
+      transition: color 0.3s ease;
+    }
+  
+    &:hover {
+      color: $color-destacar; /* Esto cambiará el color de todo el enlace */
+    }
+  
+    &:hover .menu-sidebar {
+      color: $color-destacar; /* También cambiamos el color del texto */
+    }
+  
+    &:hover i {
+      color: $color-destacar; /* Cambiar color del ícono */
+    }
+  }
+
+  .contraer-sidebar {
+    color: transparent; /* Color inicial del icono */
+  }
+
+  // Para pantallas más pequeñas o medianas
+  @media (max-width: 1200px) {
+    width: 80px; /* El Sidebar colapsa a 80px en pantallas menores a 1200px */
+    padding: 20px 10px !important;
+
+    .sidebar-content {
+      display: none; /* Oculta el contenido del Sidebar cuando está colapsado */
+    }
+
+    .sidebar-header {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .sidebar-header .titulo-panel {
+      display: none;
+    }
+
+    .mb-4 {
+      margin: 0;
+      font-size: 0;
+    }
+
+    .contraer-sidebar {
+      color: white; /* Color inicial del icono */
+  
+      &:hover {
+        color: $color-destacar; /* Cambia el color del icono al hacer hover */
+      }
+    }
+
+    &.expanded {
+      width: 250px; /* El Sidebar se expande a 250px si está expandido */
+      padding: 40px !important;
+      z-index: 1001;
+
+      .sidebar-content {
+        display: block; /* Muestra el contenido del Sidebar cuando está expandido */
+      }
+
+      .sidebar-header {
+        flex-direction: row;
+      }
+
+      .sidebar-header .titulo-panel {
+        display: flex;
+      }
+
+      .mb-4 {
+        font-size: inherit;
+      }
+    }
+  }
+
+  // Para pantallas más pequeñas (≤785px)
+  @media (max-width: 785px) {
+    width: 60px; /* Ancho cuando está en modo móvil */
+    padding: 20px 10px !important;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
+
+    .sidebar-content {
+      display: none;
+    }
+
+    .sidebar-header {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .mb-4 {
+      margin: 0;
+      font-size: 0;
+    }
+
+    &.expanded {
+      width: 100%; /* El Sidebar ocupa todo el ancho en pantallas móviles */
+      padding: 40px !important;
+      z-index: 1001;
+
+      .sidebar-content {
+        display: block;
+      }
+
+      .sidebar-header {
+        flex-direction: row;
+      }
+
+      .mb-4 {
+        font-size: inherit;
+      }
+    }
+  }
+}

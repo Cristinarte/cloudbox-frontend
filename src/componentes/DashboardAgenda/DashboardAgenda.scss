@@ -1,0 +1,8 @@
+@import '../../assets/scss/variables-generales.scss';
+.dashboard {
+    display: flex;
+    flex-direction: row; /* Esto coloca el Sidebar y el Colecciones uno al lado del otro */
+    height: 100vh; /* Para ocupar toda la altura de la ventana */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+  

@@ -1,0 +1,120 @@
+@import '../../assets/scss/variables-generales.scss';
+
+.container-general {
+  margin-top: 84px;
+}
+
+.container-general img {
+  width: auto;
+  height: 40px; /* Tamaño base para imágenes */
+}
+
+/* Estilos del contenedor del título */
+.container-titulo {
+  background-color: $color-texto-principal;
+  color: white;
+  font-family: $fuente-titulo;
+  height: 400px; /* Altura base */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem; /* Padding base */
+  
+  .titulo-principal {
+    font-size: 2.5rem; /* Tamaño base del h1 */
+    margin: 0;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  span {
+    color: $color-destacar;
+  }
+
+  .imagen-titulo {
+    height: 40px; /* Tamaño base de las imágenes */
+    margin: 0 1rem; /* Margen base horizontal */
+  }
+}
+
+/* Contenido principal */
+.sobre-nosotros-contenido {
+  .titulo-principal {
+    font-family: $fuente-titulo;
+    color: $color-texto-principal;
+    font-size: 1.75rem; /* Tamaño base para h3 */
+  }
+
+  .texto-principal {
+    font-family: $fuente-principal;
+    color: $color-texto-principal;
+    font-size: 1rem; /* Tamaño base para párrafos */
+
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .enlace-manual {
+    font-family: $fuente-principal;
+    color: $color-secundario;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 690px) {
+  .container-titulo {
+   /* Permitir que la altura se ajuste al contenido */
+    padding: 1.5rem; /* Reducir padding */
+    
+    .titulo-principal {
+      font-size: 1.5rem; /* Reducir tamaño del h1 */
+    }
+
+    .imagen-titulo {
+      height: 30px; /* Reducir tamaño de las imágenes */
+      margin: 0 0.5rem; /* Reducir margen horizontal */
+    }
+  }
+
+  .sobre-nosotros-contenido {
+    .titulo-principal {
+      font-size: 1.25rem; /* Reducir tamaño del h3 */
+    }
+
+    .texto-principal {
+      font-size: 0.9rem; /* Reducir tamaño del texto */
+    }
+  }
+}
+
+/* Para pantallas muy pequeñas (ej. móviles < 400px) */
+@media (max-width : 400px) {
+  .container-titulo {
+    padding: 1rem;
+
+    .titulo-principal {
+      font-size: 1.2rem; /* Aún más pequeño */
+    }
+
+    .imagen-titulo {
+      height: 25px; /* Aún más pequeño */
+      margin: 0 0.3rem; /* Reducir aún más el margen */
+    }
+  }
+
+  .sobre-nosotros-contenido {
+    .titulo-principal {
+      font-size: 1rem;
+    }
+
+    .texto-principal {
+      font-size: 0.85rem;
+    }
+  }
+}

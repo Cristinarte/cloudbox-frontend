@@ -1,0 +1,66 @@
+@import 'variables-generales.scss'; // Importamos las variables generales
+
+// Estilo de los botones principales
+.btn-primary {
+  background-color: $color-boton-principal;
+  color: $color-texto-boton-principal;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $color-boton-principal-hover;
+  }
+
+}
+
+// Estilo de los botones secundarios
+.btn-outline-primary {
+    padding: 8px 16px;
+    background-color: $color-boton-secundario;
+    color: $color-texto-boton-secundario;
+    border: 1px solid $color-boton-secundario;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: $color-boton-secundario-hover;
+    }
+}
+
+.btn-warning{
+  padding: 8px 16px;
+  background-color: $color-warning-default;
+  color: $color-texto-principal;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $color-warning-hover;
+  }
+}
+
+.btn-danger{
+  padding: 8px 16px;
+  background-color: $color-error-default;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $color-error-hover;
+  }
+}
+

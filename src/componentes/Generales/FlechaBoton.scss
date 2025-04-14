@@ -1,0 +1,26 @@
+@import '../../assets/scss/variables-generales.scss';
+.flecha-boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .boton-flecha {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: $color-boton-principal;
+    padding: 10px;
+    cursor: pointer;
+    margin: 0 180px;
+    transition: background-color 0.3s, color 0.3s;
+    min-height: 10px; /* Establece un tamaño mínimo para el botón */
+    line-height: 10px; /* Centra las flechas verticalmente */
+    min-width: 30px;
+  }
+  
+  
+  .boton-flecha:hover {
+    color:  $color-boton-principal-hover;
+  }
+  

@@ -1,0 +1,50 @@
+@import '../../assets/scss/variables-generales.scss';
+
+.colecciones {
+  padding: 50px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.filtros {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.colecciones-busqueda {
+  position: relative;
+}
+
+.colecciones-busqueda input {
+  padding-left: 55px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+
+.mis-colecciones {
+  text-align: center;
+  font-size: 36px;
+  font-family: $fuente-titulo;
+  color: $color-boton-principal;
+  margin-bottom: 40px;
+
+  @media (max-width: 768px) { /* Punto de corte para móviles y tablets */
+    font-size: 24px; /* Tamaño reducido para móviles */
+    margin-bottom: 20px; /* Opcional: reducimos el margen para ahorrar espacio */
+  }
+
+  /* Si quieres que el cambio ocurra en el mismo punto que el Dashboard (468px) */
+  @media (max-width: 468px) {
+    font-size: 20px; /* Aún más pequeño para pantallas muy pequeñas */
+    margin-bottom: 15px; /* Ajuste adicional */
+  }
+}

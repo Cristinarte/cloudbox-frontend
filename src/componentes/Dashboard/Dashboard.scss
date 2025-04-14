@@ -1,0 +1,20 @@
+@import '../../assets/scss/variables-generales.scss';
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+
+  @media (max-width: 785px) {
+    flex-direction: row; // Sidebar y Panel lado a lado
+    height: auto;
+    position: relative; // Asegura que el Sidebar fijo se superponga correctamente
+  }
+}
+
+.panel {
+  flex-grow: 1;
+
+  @media (max-width: 785px) {
+    margin-left: 60px; // Espacio para el Sidebar colapsado
+  }
+}

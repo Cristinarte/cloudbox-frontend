@@ -1,0 +1,127 @@
+@import '../../assets/scss/variables-generales.scss';
+@import '../../assets/scss/_botones.scss';
+
+.d-flex-login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: $color-texto-boton-principal;
+}
+
+.registro-form-container-login {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+  .texto-aviso {
+    text-align: center !important;
+    padding: 0px;
+    margin-top: 16px;
+  }
+
+  @media (max-width: 785px) {
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+.formulario {
+  width: 100%;
+  max-width: 600px;
+
+  @media (max-width: 785px) {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+.error-asterisco {
+  color: $color-error-default;
+  padding: 5px;
+}
+
+.vectorLogin {
+  width: 130px;
+  height: 130px;
+
+  @media (min-width: 786px) {
+    position: fixed;
+    margin-left: 1200px;
+    margin-top: 500px;
+  }
+
+  @media (max-width: 785px) {
+    position: static;
+    margin: 0 auto 20px;
+    order: -1;
+    width: 100px;
+    height: 100px;
+  }
+
+  @media (max-width: 480px) {
+    width: 80px;
+    height: 80px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 785px) {
+  .d-flex-login {
+    flex-direction: column;
+    padding: 20px;
+
+    .registro-form-container-login {
+      order: 1;
+      width: 100%;
+    }
+
+    .vectorLogin {
+      order: 0;
+    }
+
+    h3 {
+      color: $color-texto-principal;
+    }
+
+    .form-label {
+      color: $color-texto-principal;
+    }
+
+    .text-danger {
+      color: $color-error-default;
+    }
+
+    .d-flex p {
+      color: $color-texto-principal;
+    }
+
+    .form-check p {
+      color: $color-texto-principal;
+    }
+
+    a {
+      color: $color-texto-principal;
+      text-decoration: underline;
+    }
+  }
+}
+
+
+

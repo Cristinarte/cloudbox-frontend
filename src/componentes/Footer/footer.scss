@@ -1,0 +1,110 @@
+@import '../../assets/scss/variables-generales.scss';
+
+footer.bg-dark {
+  background-color: $color-boton-principal !important; // Reemplaza el color de fondo
+  padding: 80px !important;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between; /* Añadir espacio entre las columnas */
+}
+
+.bi {
+  margin-left: 10px;
+}
+
+.bi-facebook:hover {
+  color: $color-destacar !important;
+}
+
+.bi-twitter:hover {
+  color: $color-destacar !important;
+}
+
+.bi-instagram:hover {
+  color: $color-destacar !important;
+}
+
+
+.sobre-nosotros {
+  color: white;
+  text-decoration: none;
+}
+
+.sobre-nosotros:hover {
+  color: $color-destacar !important;
+}
+
+/* Media query para pantallas de hasta 1024px (tablets y laptops pequeñas) */
+@media (max-width: 1024px) {
+  footer.bg-dark {
+    padding: 60px !important; /* Reducimos el padding */
+  }
+
+  .row {
+    flex-direction: column; /* Apila las columnas verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Centra el texto */
+  }
+
+  .col-md-4 {
+    margin-bottom: 20px; /* Añade espacio entre los elementos apilados */
+  }
+
+  .text-md-end {
+    text-align: center !important; /* Sobreescribe el alineamiento a la derecha */
+  }
+}
+
+/* Media query para pantallas de hasta 768px (móviles grandes y tablets) */
+@media (max-width: 768px) {
+  footer.bg-dark {
+    padding: 40px !important; /* Más reducción en el padding */
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .col-md-4 {
+    margin-bottom: 15px;
+  }
+
+  .bi {
+    margin-left: 8px; /* Reduce ligeramente el margen entre íconos */
+  }
+
+  h5 {
+    font-size: 1.25rem; /* Reduce ligeramente el tamaño del título (20px) */
+  }
+}
+
+/* Media query para pantallas de hasta 320px (móviles pequeños) */
+@media (max-width: 320px) {
+  footer.bg-dark {
+    padding: 20px !important; /* Padding mínimo */
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .col-md-4 {
+    margin-bottom: 10px;
+  }
+
+  .bi {
+    margin-left: 5px; /* Margen aún más pequeño */
+  }
+
+  h5 {
+    font-size: 1rem; /* 16px para mantener legibilidad */
+  }
+
+  p.text-center {
+    font-size: 0.875rem; /* 14px para el texto de copyright */
+  }
+}

@@ -1,0 +1,31 @@
+@import 'variables-generales';
+
+body{
+    font-family: $fuente-principal;
+    background-color: $color-fondo-web;
+    color: $color-texto-principal;
+    margin: 0;
+    padding: 0;
+}
+
+  
+// Establecer contenedor base
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $espaciado-lateral;
+}
+
+section {
+    margin-bottom: $espaciado-seccion;
+}
+
+
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+    box-sizing: border-box;
+}

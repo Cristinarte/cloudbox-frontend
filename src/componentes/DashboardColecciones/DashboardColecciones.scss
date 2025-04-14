@@ -1,0 +1,42 @@
+@import '../../assets/scss/variables-generales.scss';
+
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: $altura-navbar;
+}
+
+.sidebar.d-flex {
+  position: fixed;
+  margin-top: $altura-navbar;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.colecciones {
+  position: relative;
+  width: calc(100% - 400px); /* Espacio cuando el Sidebar está expandido */
+  box-sizing: border-box; /* Incluye padding en el cálculo del ancho */
+  padding: 50px; /* Padding inicial */
+  margin-left: 400px; /* Espacio cuando el Sidebar está expandido */
+
+  @media (max-width: 1200px) {
+    margin-left: 60px; /* Sidebar colapsado */
+    width: calc(100% - 60px); /* Ajuste de ancho */
+    padding: 30px; /* Reducimos el padding en pantallas medianas */
+  }
+
+  @media (max-width: 785px) {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+    padding: 20px; /* Más pequeño para pantallas pequeñas */
+  }
+
+  @media (max-width: 468px) {
+    margin-left: 60px; /* Mantenemos el margen para no pegarse al Sidebar */
+    width: calc(100% - 60px); /* El ancho se ajusta al espacio restante */
+    padding: 10px; /* Padding mínimo */
+    min-width: 0; /* Evita que el contenido fuerce un ancho mayor */
+  }
+}

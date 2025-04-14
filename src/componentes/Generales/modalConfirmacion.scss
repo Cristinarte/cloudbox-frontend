@@ -1,0 +1,50 @@
+@import '../../assets/scss/variables-generales.scss';
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-contenido {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.modal-botones {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column; /* Los botones ahora están apilados en columna */
+  justify-content: center; /* Centra los botones verticalmente */
+  align-items: center; /* Alinea los botones horizontalmente */
+  gap: 1rem; /* Espacio entre los botones */
+}
+
+.btn-cancelar,
+.btn-confirmar {
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%; /* Los botones ocupan todo el ancho del modal */
+}
+
+.btn-cancelar {
+  background: #ccc;
+}
+
+.btn-confirmar {
+  background: $color-error-default;
+  color: white;
+}

@@ -1,0 +1,187 @@
+@import '../../assets/scss/variables-generales.scss';
+
+.contenidos-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.contenido-card {
+  display: flex !important ;  /* Asegura que los elementos se alineen horizontalmente */
+  flex-wrap: wrap;  /* Permite que se acomoden en pantallas pequeñas */
+  background-color: white;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 750px;  /* Limitar el tamaño máximo */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.contenido-img-wrapper {
+  margin-right: 20px;
+  display: flex;  /* Para centrar la imagen */
+  align-items: center;
+  justify-content: center;
+  width: 120px;  
+  height: 120px;  
+}
+
+.contenido-img {
+  width: 120px;  
+  height: 120px;  
+  object-fit: cover;  /* Asegura que la imagen se recorte sin deformarse */
+  border-radius: 5px;
+}
+
+
+.contenido-info {
+  flex: 1;  /* El contenido ocupará el espacio restante */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.contenido-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  word-wrap: break-word; /* Permite que las palabras largas se dividan */
+  overflow-wrap: break-word; /* Estándar moderno, igual que word-wrap */
+  word-break: break-word; /* Divide palabras largas si no caben */
+}
+
+.contenido-description {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  word-wrap: break-word; /* Permite que las palabras largas se dividan */
+  overflow-wrap: break-word; /* Estándar moderno, igual que word-wrap */
+  word-break: break-word; /* Divide palabras largas si no caben */
+}
+
+.contenido-url {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  color: $color-texto-azul;
+  word-wrap: break-word;  /* Se asegura que las URLs largas se ajusten */
+  overflow-wrap: break-word;  /* Se asegura de que el texto largo no se desborde */
+  word-break: break-word; 
+  /* Estilo para el enlace dentro del párrafo */
+  a {
+    color: $color-boton-principal !important; /* Color deseado para el enlace */
+    text-decoration: none; /* Opcional: elimina el subrayado por defecto */
+
+    &:hover {
+      text-decoration: underline; /* Opcional: subrayado al hacer hover */
+    }
+  }
+}
+
+.contenido-buttons {
+  display: flex;
+  justify-content: flex-end;  /* Los botones estarán alineados a la izquierda */
+  margin-top: 20px;
+  gap: 10px;  /* Espacio entre los botones */
+  color: $color-boton-secundario ; 
+}
+
+.contenido-buttons .btn-danger {
+  margin-left: auto;  /* Empuja el botón "Eliminar" a la derecha */
+}
+
+.resaltado {
+  background-color: $color-boton-secundario; // Amarillo claro, típico de PDFs
+  padding: 0 2px; // Pequeño padding para que el fondo no quede demasiado ajustado
+  color: white; // Negro para buena legibilidad
+}
+
+
+/* RESPONSIVO: cuando la pantalla es pequeña, la imagen y el contenido se apilan */
+@media (max-width: 768px) {
+  .contenido-card {
+    flex-direction: column; /* En pantallas pequeñas, se apilan en columna */
+    align-items: center;
+  }
+
+  .contenido-img-wrapper {
+    flex: 0 0 100%;  /* La imagen ocupará el 100% del ancho */
+    padding-right: 0;
+    margin-bottom: 15px;  /* Espacio entre la imagen y el contenido */
+  }
+
+  .contenido-info {
+    flex: 0 0 100%;  /* El contenido ocupará el 100% del ancho */
+  }
+
+  .contenido-title{
+    font-size: 20px !important;
+  }
+
+
+  @media (max-width: 768px) {
+    .contenido-card {
+      display: flex;
+      flex-direction: column; /* Apila los elementos verticalmente */
+      align-items: center; /* Centra todos los hijos horizontalmente */
+      justify-content: center; /* Centra verticalmente el contenido */
+      text-align: center; /* Centra el texto */
+      width: 100%; /* Asegura que ocupe todo el ancho */
+      padding: 20px; /* Mantén el padding */
+    }
+  
+    .contenido-img-wrapper {
+      display: flex; /* Activa flexbox */
+      justify-content: center; /* Centra la imagen horizontalmente */
+      align-items: center; /* Centra la imagen verticalmente */
+      width: 100%; /* Ocupa todo el ancho disponible */
+      margin-right: 0; /* Elimina el margen derecho del diseño base */
+      margin-bottom: 15px; /* Espacio entre la imagen y el contenido */
+    }
+  
+    .contenido-img {
+      width: auto; /* Ajusta el tamaño automáticamente */
+      max-width: 120px; /* Limita el tamaño máximo */
+      height: auto; /* Mantiene la proporción */
+      object-fit: cover; /* Evita distorsiones */
+    }
+  
+    .contenido-info {
+      width: 100%; /* Ocupa todo el ancho */
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centra los elementos hijos horizontalmente */
+      flex: 0; /* Evita que se expanda innecesariamente */
+    }
+  
+    .contenido-title,
+    .contenido-description,
+    .contenido-url {
+      width: 100%; /* Ocupa todo el ancho */
+      text-align: center; /* Centra el texto */
+      margin-bottom: 10px; /* Espacio entre elementos */
+      font-size: 16px;
+    }
+  
+    .contenido-buttons {
+      display: flex;
+      justify-content: center; /* Centra los botones horizontalmente */
+      width: 100%; /* Ocupa todo el ancho */
+      margin-top: 15px; /* Espacio superior */
+    }
+  }
+
+  @media (max-width: 360px) {
+    .contenidos-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px !important;
+
+    }
+
+  }
+}
+

@@ -1,0 +1,99 @@
+// COLORES:----------------------------------------------------------------------------//
+
+// Colores principales
+$color-destacar: #1FF98C; // Para destacar cosas como palabras etc.
+$color-secundario: #FA5CFF; // Para cosas secundarias
+
+// Colores de botones principales
+$color-boton-principal: #252DD0; // Color del botón principal
+$color-boton-principal-hover: #191f96; // Hover del botón principal
+$color-texto-boton-principal: #F1F4F9; // Texto de botones principales
+
+// Colores de botones secundarios
+$color-boton-secundario: #BBBEF0; // Botón secundario
+$color-boton-secundario-hover: #A0A5FA; // Hover del botón secundario
+$color-texto-boton-secundario: #252DD0; // Texto del botón secundario
+
+// Colores para fondo
+$color-fondo-web: #F1F4F9; // Fondo de la web
+
+// Colores para textos
+$color-texto-principal: #171719; // Texto principal
+$color-texto-azul: #252DD0; // Texto azul (para cosas como preguntas frecuentes)
+$color-fondo-azul: #252DD0; // Para iconos sobre fondo azul
+
+// Colores de entradas de formulario
+$color-fondo-input: #F1F4F9; // Color de fondo de los inputs
+$color-borde-input: #B7B7B8; // Color del borde del input
+
+// Colores para iconos sobre fondo azul
+$color-iconos-sobre-azul: #F1F4F9; // Iconos sobre fondo azul
+
+// Colores de éxito (sucesos)
+$color-exito-default: #08BA61; // Color de éxito por defecto
+$color-exito-hover: #48D78C; // Hover de éxito
+$color-exito-active: #048E4B; // Estado activo de éxito
+
+// Colores de error
+$color-error-default: #D14444; // Rojo suave para el estado por defecto
+$color-error-hover: darken($color-error-default, 10%); // Rojo más oscuro para el hover
+$color-error-active: darken($color-error-default, 20%); // Rojo aún más oscuro para el estado activo
+
+
+// Colores de advertencia (warning)
+$color-warning-default: #F2D24B; 
+$color-warning-hover: darken($color-warning-default, 10%); 
+$color-warning-active: darken($color-warning-default, 20%); 
+
+
+// FUENTES:----------------------------------------------------------------------------//
+
+// Fuentes
+$fuente-principal: 'Inter', sans-serif;
+$fuente-titulo: 'Space Grotesk', sans-serif;
+
+// Tamaños base
+$tamaño-texto-principal: 1rem;  // 16px
+$tamaño-boton: 1rem;            // 16px
+$tamaño-titulo-h1: 3rem;        // 48px para títulos grandes
+$tamaño-titulo-h2: 2.5rem;      // 40px para sub-títulos
+$tamaño-titulo-h3: 2rem;        // 32px para otros títulos
+
+// Peso de la fuente
+$fuente-peso-regular: 400;
+$fuente-peso-medium: 500;
+$fuente-peso-bold: 700;
+
+// Espaciados generales
+$espaciado-general: 2rem; // Margen y padding general
+$espaciado-seccion: 4rem; // Espaciado entre secciones
+$espaciado-lateral: 24px; 
+$altura-navbar: 84px;
+
+
+// SOBRESCRIBIENDO LAS VARIABLES DE BOOTSTRAP
+
+// Color de fondo del botón principal
+$btn-primary-bg: $color-boton-principal; // Fondo del botón principal
+// Color del texto del botón principal
+$btn-primary-color: $color-texto-boton-principal; // Texto del botón principal
+// Hover de los botones principales
+$btn-primary-hover-bg: $color-boton-principal-hover; // Hover de los botones principales
+
+// Color de fondo de los botones secundarios
+$btn-secondary-bg: $color-boton-secundario; // Fondo del botón secundario
+// Color del texto de los botones secundarios
+$btn-secondary-color: $color-texto-boton-secundario; // Texto de los botones secundarios
+// Hover de los botones secundarios
+$btn-secondary-hover-bg: $color-boton-secundario-hover; // Hover de los botones secundarios
+
+// Border color para los botones outline
+$btn-outline-primary-color: $color-texto-boton-principal; // Color del texto del botón outline
+$btn-outline-secondary-color: $color-texto-boton-secundario; // Color del texto del botón outline secundario
+
+// FONDO Y TEXTO
+$body-bg: $color-fondo-web; // Fondo de la página
+$body-color: $color-texto-principal; // Color del texto principal
+
+
+
