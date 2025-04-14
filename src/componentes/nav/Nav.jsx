@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import ReactDOM from 'react-dom'; // Importar ReactDOM para usar createPortal
-import './Nav.scss';
+import './nav.scss';
 import logo from "../../assets/images/logoWebV4.png";
 
 export const Nav = ({ token, setToken }) => {
