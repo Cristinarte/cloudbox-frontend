@@ -4,6 +4,7 @@ import './Inicio.scss';
 import axios from 'axios';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import rueda from '../../assets/images/rueda3.png';
+import { API_URL } from '../../api';
 
 export const Inicio = ({ setToken, setAlias }) => {
   const [email, setEmail] = useState('');
@@ -17,7 +18,7 @@ export const Inicio = ({ setToken, setAlias }) => {
   const envioFormulario = async (e) => {
     e.preventDefault();
     try {
-      const respuesta = await axios.post('http://localhost:8000/api/login', {
+      const respuesta = await axios.post(`${API_URL}/login`, {
         email,
         password,
       });
@@ -36,7 +37,7 @@ export const Inicio = ({ setToken, setAlias }) => {
   const handleGoogleLogin = async (credentialResponse) => {
     console.log('Token de Google:', credentialResponse.credential);
     try {
-      const respuesta = await axios.post('http://localhost:8000/api/google-login', {
+      const respuesta = await axios.post(`${API_URL}/google-login`, {
         token: credentialResponse.credential,
       });
       const { token, alias } = respuesta.data;

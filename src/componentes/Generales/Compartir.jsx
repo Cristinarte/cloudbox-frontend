@@ -4,7 +4,8 @@ import twitter from '../../assets/images/iconoX.png';
 import facebook from '../../assets/images/iconoFacebook.png';
 import mail from '../../assets/images/iconoMail.png';
 import instagram from '../../assets/images/iconoInstagram.png';
-import './Compartir.scss'; // Asegúrate de crear este archivo SCSS
+import './Compartir.scss'; 
+
 
 export const Compartir = ({ show, onHide, coleccion }) => {
   if (!coleccion) return null; // Asegura que la colección esté disponible

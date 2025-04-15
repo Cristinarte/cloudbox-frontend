@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Inicio.scss'; // Puedes reutilizar los estilos del login si quieres
 import { useNavigate } from 'react-router-dom';
-
+import { API_URL } from '../../api';
 
 
 export const RecuperarContrasenia = () => {
@@ -14,7 +14,7 @@ export const RecuperarContrasenia = () => {
  const manejarEnvio = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8000/api/forgot-password', {
+      await axios.post(`${API_URL}/forgot-password`, {
         email,
       });
   

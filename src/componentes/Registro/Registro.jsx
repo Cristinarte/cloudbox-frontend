@@ -4,8 +4,9 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import FlechaBoton from '../Generales/FlechaBoton';
 import relojArena from '../../assets/images/relojArena.png';
+import { API_URL } from '../../api';
 
-const endpoint = 'http://localhost:8000/api/register';
+const endpoint = `${API_URL}/register`;
 
 export const Registro = () => {
   const [nombre, setNombre] = useState('');

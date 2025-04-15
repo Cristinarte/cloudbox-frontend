@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Inicio.scss'; // Puedes reutilizar los estilos del login si quieres
 import { useNavigate, useLocation } from 'react-router-dom';
+import { API_URL } from '../../api';
 
 export const RestablecerContrasenia = () => {
   const [password, setPassword] = useState('');
@@ -21,7 +22,7 @@ export const RestablecerContrasenia = () => {
     e.preventDefault();
     try {
       // Hacer la solicitud para restablecer la contraseña
-      await axios.post('http://localhost:8000/api/reset-password', {
+      await axios.post(`${API_URL}/reset-password`, {
         token,
         email,
         password,

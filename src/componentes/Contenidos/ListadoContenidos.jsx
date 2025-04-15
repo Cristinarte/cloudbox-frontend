@@ -5,6 +5,7 @@ import axios from "axios";
 import { FaEdit, FaTrash, FaShareAlt } from 'react-icons/fa';
 import { ModalConfirmacion } from '../Generales/ModalConfirmacion';  // Importa el modal
 import "./listadoContenidos.scss";
+import { API_URL } from '../../api';
 
 export const ListadoContenidos = ({ coleccionId, contenidos, terminoBusqueda }) => {
   const [contenidosLocal, setContenidosLocal] = useState(contenidos);
@@ -33,7 +34,7 @@ export const ListadoContenidos = ({ coleccionId, contenidos, terminoBusqueda }) 
       return;
     }
     try {
-      await axios.delete(`http://localhost:8000/api/contenidos/${contenidoAEliminar}`, {
+      await axios.delete(`${API_URL}/contenidos/${contenidoAEliminar}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setContenidosLocal((prev) => prev.filter((contenido) => contenido.id !== contenidoAEliminar));
@@ -120,7 +121,7 @@ export const ListadoContenidos = ({ coleccionId, contenidos, terminoBusqueda }) 
             >
               <div className="contenido-img-wrapper">
                 <img
-                  src={`http://localhost:8000${contenido.imagen}`}
+                  src={`${API_URL.replace('/api', '')}${contenido.imagen}`}
                   alt={contenido.titulo}
                   className="contenido-img"
                 />

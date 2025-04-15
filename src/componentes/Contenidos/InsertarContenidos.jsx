@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect, useRef } from "react";
 import { Accordion, Form, Button } from "react-bootstrap";
 import './InsertarContenidos.scss';
+import { API_URL } from '../../api';
 
 export const InsertarContenidos = ({ coleccionId, onExitoInsercion, contenidoAEditar, setContenidoAEditar }) => {
   const [titulo, setTitulo] = useState("");
@@ -62,7 +63,7 @@ export const InsertarContenidos = ({ coleccionId, onExitoInsercion, contenidoAEd
       if (contenidoAEditar) {
         datosFormulario.append("_method", "PUT");
         response = await axios.post(
-          `http://localhost:8000/api/contenidos/${contenidoAEditar.id}`,
+          `${API_URL}/contenidos/${contenidoAEditar.id}`,
           datosFormulario,
           {
             headers: {
@@ -72,7 +73,7 @@ export const InsertarContenidos = ({ coleccionId, onExitoInsercion, contenidoAEd
           }
         );
       } else {
-        response = await axios.post("http://localhost:8000/api/contenidos", datosFormulario, {
+        response = await axios.post(`${API_URL}/contenidos`, datosFormulario, {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "multipart/form-data",
@@ -146,7 +147,7 @@ export const InsertarContenidos = ({ coleccionId, onExitoInsercion, contenidoAEd
                 <div className="imagen-actual">
                   <p>Imagen actual:</p>
                   <img
-                    src={`http://localhost:8000${contenidoAEditar.imagen}`}
+                    src={`${API_URL.replace('/api', '')}${contenidoAEditar.imagen}`}
                     alt="Imagen actual"
                     style={{ maxWidth: "100px", display: "block", marginTop: "10px" }}
                   />

@@ -5,6 +5,7 @@ import { FaEdit, FaTrash, FaShareAlt } from 'react-icons/fa';
 import './ListadoColecciones.scss';
 import defaultImage from '../../assets/images/defaultImg.png';
 import { Compartir } from '../Generales/Compartir';
+import { API_URL } from '../../api';
 
 export const ListadoColecciones = ({ colecciones, onEditar, onEliminar, terminoBusqueda }) => {
   const [modalShow, setModalShow] = useState(false);
@@ -37,7 +38,7 @@ export const ListadoColecciones = ({ colecciones, onEditar, onEliminar, terminoB
               <Link to={`/contenidos/${coleccion.id}`} style={{ textDecoration: 'none', display: 'block' }}>
                 <Card.Img
                   variant="top"
-                  src={coleccion.imagen ? `http://localhost:8000${coleccion.imagen}` : defaultImage}
+                  src={coleccion.imagen ? `${API_URL.replace('/api', '')}${coleccion.imagen}` : defaultImage}
                   alt={`Imagen de la colección ${coleccion.nombre}`}
                 />
                 <Card.Body>

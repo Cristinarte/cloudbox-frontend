@@ -4,6 +4,7 @@ import axios from "axios";
 import { BusquedaFiltro } from "../BusquedaFiltro/BusquedaFiltro";
 import { ListadoContenidos } from "./ListadoContenidos";
 import "./Contenidos.scss";
+import { API_URL } from '../../api';
 
 export const Contenidos = () => {
   const { coleccionId } = useParams();
@@ -21,7 +22,7 @@ export const Contenidos = () => {
     }
 
     try {
-      const respuesta = await axios.get(`http://localhost:8000/api/colecciones/${coleccionId}`, {
+      const respuesta = await axios.get(`${API_URL}/colecciones/${coleccionId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setColeccionNombre(respuesta.data.nombre);
@@ -39,7 +40,7 @@ export const Contenidos = () => {
       return;
     }
     try {
-      const respuesta = await axios.get("http://localhost:8000/api/contenidos", {
+      const respuesta = await axios.get(`${API_URL}/contenidos`, {
         headers: { Authorization: `Bearer ${token}` },
         params: { coleccion_id: coleccionId },
       });

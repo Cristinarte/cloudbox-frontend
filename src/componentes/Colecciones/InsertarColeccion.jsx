@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Accordion, Form, Button } from 'react-bootstrap';
 import './InsertarColeccion.scss';
+import { API_URL } from '../../api';
 
 export const InsertarColeccion = ({ onInsertSuccess, coleccionEditar, setColeccionEditar }) => {
   const [nombre, setNombre] = useState('');
@@ -38,7 +39,7 @@ export const InsertarColeccion = ({ onInsertSuccess, coleccionEditar, setColecci
         // Modo edición: POST con spoofing PUT
         datosFormulario.append('_method', 'PUT');
         respuesta = await axios.post(
-          `http://localhost:8000/api/colecciones/${coleccionEditar.id}`,
+          `${API_URL}/colecciones/${coleccionEditar.id}`,
           datosFormulario,
           {
             headers: {
@@ -50,7 +51,7 @@ export const InsertarColeccion = ({ onInsertSuccess, coleccionEditar, setColecci
         );
       } else {
         // Modo inserción: POST
-        respuesta = await axios.post('http://localhost:8000/api/colecciones', datosFormulario, {
+        respuesta = await axios.post(`${API_URL}/colecciones`, datosFormulario, {
           headers: {
             Authorization: `Bearer ${token}`,
             Accept: 'application/json',
@@ -106,7 +107,7 @@ export const InsertarColeccion = ({ onInsertSuccess, coleccionEditar, setColecci
                 <div className="imagen-actual">
                   <Form.Label>Imagen actual:</Form.Label>
                   <img
-                    src={`http://localhost:8000${coleccionEditar.imagen}`}
+                    src={`${API_URL.replace('/api', '')}${coleccionEditar.imagen}`}
                     alt="Imagen actual"
                     style={{ maxWidth: "100px", display: "block", marginTop: "10px" }} // Añadido display: block
                   />

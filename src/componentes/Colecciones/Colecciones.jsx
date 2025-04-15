@@ -6,6 +6,9 @@ import { BusquedaFiltro } from '../BusquedaFiltro/BusquedaFiltro';
 import { InsertarColeccion } from './InsertarColeccion';
 import './Colecciones.scss';
 import { ModalConfirmacion } from '../Generales/ModalConfirmacion';
+import { API_URL } from '../../api';
+
+
 
 export const Colecciones = () => {
   // Estados locales
@@ -29,7 +32,7 @@ export const Colecciones = () => {
     }
 
     try {
-      const respuesta = await axios.get('http://localhost:8000/api/colecciones', {
+      const respuesta = await axios.get(`${API_URL}/colecciones`, {
         headers: {
           Authorization: `Bearer ${token}`,
           Accept: 'application/json',
@@ -83,7 +86,7 @@ export const Colecciones = () => {
   const confirmarEliminacion = async () => {
     try {
       const id = coleccionAEliminar.id;
-      const respuesta = await axios.delete(`http://localhost:8000/api/colecciones/${id}`, {
+      const respuesta = await axios.delete(`${API_URL}/colecciones/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
