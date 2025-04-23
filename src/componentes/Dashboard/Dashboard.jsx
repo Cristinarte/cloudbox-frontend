@@ -3,7 +3,7 @@ import { Sidebar } from '../Sidebar/Sidebar';
 import { Panel } from '../Panel/Panel';
 import { ColeccionCompartida } from '../Compartir/ColeccionCompartida';
 import { useParams, useNavigate } from 'react-router-dom';
-import "./dashboard.scss";
+import "./Dashboard.scss";
 
 export const Dashboard = ({ alias, token, setToken }) => {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
