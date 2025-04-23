@@ -29,6 +29,19 @@
   padding-right: 0 !important;
 }
 
+.logo-navbar {
+  height: auto;
+  max-height: 50px; // Altura máxima del logo para que no se vea aplastado
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    max-width: 50px; // Adaptación al isologo más pequeño
+  }
+}
+
 .hamburger {
   background: none;
   border: none;
