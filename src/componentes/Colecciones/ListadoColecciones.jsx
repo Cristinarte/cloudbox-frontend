@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaEdit, FaTrash, FaShareAlt } from 'react-icons/fa';
 import './ListadoColecciones.scss';
 import defaultImage from '../../assets/images/defaultImg.png';
-import { Compartir } from '../Generales/Compartir';
+import { Compartir } from '../Compartir/Compartir';
 import { API_URL } from '../../api';
 
 export const ListadoColecciones = ({ colecciones, onEditar, onEliminar, terminoBusqueda }) => {

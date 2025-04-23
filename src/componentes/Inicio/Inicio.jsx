@@ -27,7 +27,15 @@ export const Inicio = ({ setToken, setAlias }) => {
       localStorage.setItem('alias', alias);
       setToken(token);
       setAlias(alias);
-      navigate('/dashboard');
+      
+      // Verificar si hay un token compartido pendiente
+      const tokenCompartidoPendiente = localStorage.getItem('tokenCompartidoPendiente');
+      if (tokenCompartidoPendiente) {
+        localStorage.removeItem('tokenCompartidoPendiente');
+        navigate(`/compartido/${tokenCompartidoPendiente}`);
+      } else {
+        navigate('/dashboard');
+      }
     } catch (error) {
       setError(error.response?.data?.error || 'Error al iniciar sesión');
     }
@@ -45,7 +53,15 @@ export const Inicio = ({ setToken, setAlias }) => {
       localStorage.setItem('alias', alias);
       setToken(token);
       setAlias(alias);
-      navigate('/dashboard');
+      
+      // Verificar si hay un token compartido pendiente
+      const tokenCompartidoPendiente = localStorage.getItem('tokenCompartidoPendiente');
+      if (tokenCompartidoPendiente) {
+        localStorage.removeItem('tokenCompartidoPendiente');
+        navigate(`/compartido/${tokenCompartidoPendiente}`);
+      } else {
+        navigate('/dashboard');
+      }
     } catch (error) {
       console.error('Error en Google Login:', error.response?.data || error.message);
       setError(error.response?.data?.error || 'Error al iniciar sesión con Google');

@@ -1,0 +1,43 @@
+.compartir-body {
+  display: flex;
+  justify-content: space-around; /* Distribución uniforme en pantallas grandes */
+  align-items: center;
+  padding: 20px;
+  flex-wrap: nowrap; /* Por defecto, los íconos en una fila */
+}
+
+.compartir-icon {
+  width: 50px; /* Tamaño base de los íconos */
+  height: auto;
+  transition: transform 0.2s ease; /* Efecto suave al hacer hover */
+  
+  &:hover {
+    transform: scale(1.1); /* Ligero aumento al pasar el mouse */
+  }
+}
+
+/* Responsive: pantallas menores a 380px */
+@media (max-width: 380px) {
+  .compartir-body {
+    flex-wrap: wrap; /* Permite que los íconos se apilen si no caben */
+    justify-content: center; /* Centra los íconos */
+    gap: 15px; /* Espacio entre íconos */
+    padding: 15px; /* Reduce el padding para dar más espacio */
+  }
+
+  .compartir-icon {
+    width: 40px; /* Reduce el tamaño de los íconos */
+  }
+}
+
+/* Opcional: pantallas muy pequeñas (menores a 300px) */
+@media (max-width: 300px) {
+  .compartir-body {
+    flex-direction: column; /* Apila los íconos verticalmente */
+    gap: 20px; /* Más espacio entre íconos apilados */
+  }
+
+  .compartir-icon {
+    width: 35px; /* Aún más pequeño para pantallas muy pequeñas */
+  }
+}

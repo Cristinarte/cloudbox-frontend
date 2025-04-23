@@ -12,6 +12,7 @@ export const InsertarContenidos = ({ coleccionId, onExitoInsercion, contenidoAEd
   const [error, setError] = useState(null);
   const [expanded, setExpanded] = useState(false);
   const fileInputRef = useRef(null);
+  const accordionRef = useRef(null);
 
   useEffect(() => {
     if (contenidoAEditar) {
@@ -20,6 +21,16 @@ export const InsertarContenidos = ({ coleccionId, onExitoInsercion, contenidoAEd
       setUrl(contenidoAEditar.url || "");
       setImagen(null);
       setExpanded(true);
+      
+      // Scroll al formulario cuando se establece contenidoAEditar
+      setTimeout(() => {
+        if (accordionRef.current) {
+          accordionRef.current.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+          });
+        }
+      }, 100);
     } else {
       limpiarFormulario();
     }

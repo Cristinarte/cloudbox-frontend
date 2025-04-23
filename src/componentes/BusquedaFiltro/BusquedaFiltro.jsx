@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Form } from 'react-bootstrap';
 
-
 export const BusquedaFiltro = ({ onOrdenar, onBuscar }) => {
   const [orden, setOrden] = useState('');
   const [terminoBusqueda, setTerminoBusqueda] = useState('');
 
   const manejarOrden = (tipoOrden) => {
+    console.log('Click detectado, Orden seleccionado:', tipoOrden); // Depuración
     setOrden(tipoOrden);
     onOrdenar(tipoOrden);
   };

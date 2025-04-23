@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import { InsertarContenidos } from "./InsertarContenidos";
-import { Compartir } from '../Generales/Compartir';
+import { Compartir } from '../Compartir/Compartir';
 import axios from "axios";
 import { FaEdit, FaTrash, FaShareAlt } from 'react-icons/fa';
 import { ModalConfirmacion } from '../Generales/ModalConfirmacion';  // Importa el modal
+import imagenPorDefecto from '../../assets/images/imgDefault.png';
 import "./listadoContenidos.scss";
 import { API_URL } from '../../api';
 
@@ -121,7 +122,7 @@ export const ListadoContenidos = ({ coleccionId, contenidos, terminoBusqueda }) 
             >
               <div className="contenido-img-wrapper">
                 <img
-                  src={`${API_URL.replace('/api', '')}${contenido.imagen}`}
+                  src={contenido.imagen ? `${API_URL.replace('/api', '')}${contenido.imagen}` : imagenPorDefecto}
                   alt={contenido.titulo}
                   className="contenido-img"
                 />

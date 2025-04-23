@@ -17,8 +17,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { RecuperarContrasenia } from './componentes/Inicio/RecuperarContrasenia';
 import { EmailEnviado } from './componentes/Inicio/EmailEnviado';
 import { RestablecerContrasenia } from './componentes/Inicio/RestablecerContrasenia';
-
-
+import { ColeccionCompartida } from './componentes/Compartir/ColeccionCompartida'; 
 
 
 
@@ -39,8 +38,6 @@ const App=()=> {
 
   console.log('Estado en App:', { token, alias });
 
-
-
   return (
     <Router>
       <Routes>
@@ -49,15 +46,19 @@ const App=()=> {
         <Route
           path="/"
           element={
-            <>
-              <Nav token={token} setToken={setToken} />
-              <div className="content">
-                {!token && <HeroSection />}
-                {!token && <Content />}
-                {!token && <FAQSection />}
-                {!token && <Footer />}
-              </div>
-            </>
+            token ? (
+              <Navigate to="/dashboard" replace />
+            ) : (
+              <>
+                <Nav token={token} setToken={setToken} />
+                <div className="content">
+                  <HeroSection />
+                  <Content />
+                  <FAQSection />
+                  <Footer />
+                </div>
+              </>
+            )
           }
         />
 
@@ -145,10 +146,23 @@ const App=()=> {
           }
         />
 
+        {/* Ruta para compartir */}
+        <Route
+        path="/compartido/:token"
+        element={
+          <>
+            <Nav token={token} setToken={setToken} />
+            <Dashboard
+              alias={localStorage.getItem('alias')}
+              token={token}
+              setToken={setToken}
+            />
+          </>
+        }
+      />
       </Routes>
     </Router>
   );
 }
 
 export default App;
-

@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import ReactDOM from 'react-dom'; // Importar ReactDOM para usar createPortal
+import ReactDOM from 'react-dom';
 import './nav.scss';
 import logo from "../../assets/images/logoWebV4.png";
+import isologo from "../../assets/images/isologoWeb3.png";
 
 export const Nav = ({ token, setToken }) => {
   const [menuAbierto, setMenuAbierto] = useState(false);
   const [mostrarModal, setMostrarModal] = useState(false);
+  const [logoActual, setLogoActual] = useState(logo);
   const navigate = useNavigate();
 
   const toggleMenu = () => {
@@ -29,7 +31,31 @@ export const Nav = ({ token, setToken }) => {
     setMostrarModal(false);
   };
 
-  // Componente Modal separado para usar createPortal
+  // Cambiar logo en función del ancho de pantalla
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+    const handleResize = (e) => {
+      if (e.matches) {
+        setLogoActual(isologo);
+      } else {
+        setLogoActual(logo);
+      }
+    };
+
+    // Establecer logo inicial
+    if (mediaQuery.matches) {
+      setLogoActual(isologo);
+    }
+
+    // Escuchar cambios
+    mediaQuery.addEventListener('change', handleResize);
+
+    return () => {
+      mediaQuery.removeEventListener('change', handleResize);
+    };
+  }, []);
+
   const Modal = () => {
     if (!mostrarModal) return null;
 
@@ -50,7 +76,7 @@ export const Nav = ({ token, setToken }) => {
           </div>
         </div>
       </div>,
-      document.body // Renderiza el modal directamente en el <body>
+      document.body
     );
   };
 
@@ -59,15 +85,13 @@ export const Nav = ({ token, setToken }) => {
       <nav className="navbar bg-body-tertiary">
         <div className="container-fluid nav">
           <span className="navbar-brand">
-            <img src={logo} alt="CloudBox Logo" width="150" height="auto" />
+            <img src={logoActual} alt="CloudBox Logo" className="logo-navbar" />
           </span>
 
-          {/* Botón hamburguesa */}
           <button className="hamburger d-md-none" onClick={toggleMenu}>
             <i className="bi bi-list"></i>
           </button>
 
-          {/* Menú para escritorio */}
           <div className="d-none d-md-flex align-items-center">
             {token ? (
               <div className="dropdown">
@@ -102,7 +126,6 @@ export const Nav = ({ token, setToken }) => {
           </div>
         </div>
 
-        {/* Menú móvil */}
         {menuAbierto && (
           <div className="menu-movil">
             <button className="cerrar-menu" onClick={toggleMenu}>
@@ -125,7 +148,6 @@ export const Nav = ({ token, setToken }) => {
         )}
       </nav>
 
-      {/* Renderizar el Modal con createPortal */}
       <Modal />
     </>
   );
