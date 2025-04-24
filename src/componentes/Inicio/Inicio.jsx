@@ -5,6 +5,7 @@ import axios from 'axios';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import rueda from '../../assets/images/rueda3.png';
 import { API_URL } from '../../api';
+axios.defaults.withCredentials = true;
 
 export const Inicio = ({ setToken, setAlias }) => {
   const [email, setEmail] = useState('');
@@ -18,17 +19,21 @@ export const Inicio = ({ setToken, setAlias }) => {
   const envioFormulario = async (e) => {
     e.preventDefault();
     try {
+      // 1️⃣ Pedimos el CSRF cookie
+      await axios.get(`${API_URL}/sanctum/csrf-cookie`);
+  
+      // 2️⃣ Luego hacemos el login
       const respuesta = await axios.post(`${API_URL}/login`, {
         email,
         password,
       });
+  
       const { token, alias } = respuesta.data;
       localStorage.setItem('token', token);
       localStorage.setItem('alias', alias);
       setToken(token);
       setAlias(alias);
-      
-      // Verificar si hay un token compartido pendiente
+  
       const tokenCompartidoPendiente = localStorage.getItem('tokenCompartidoPendiente');
       if (tokenCompartidoPendiente) {
         localStorage.removeItem('tokenCompartidoPendiente');

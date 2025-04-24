@@ -14,6 +14,7 @@ export const Compartir = ({ show, onHide, coleccion, tipo = 'coleccion', conteni
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    console.log('Valores del useEffect:', { show, coleccion, contenido, tipo });
     if (show && (coleccion || contenido)) {
       const obtenerEnlaceCompartido = async () => {
         try {
@@ -34,7 +35,7 @@ export const Compartir = ({ show, onHide, coleccion, tipo = 'coleccion', conteni
               },
             }
           );
-
+          console.log('Respuesta al compartir:', res.data);
           // Usar la URL del backend (que es del frontend)
           setEnlaceCompartido(res.data.url);
         } catch (err) {
